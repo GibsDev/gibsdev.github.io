@@ -2,12 +2,124 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Disc Golf Bag</title>
+    <title>Websites</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #0f1419;
+        --fg: #e7ecf1;
+        --muted: #8b98a5;
+        --accent: #06b6d4;
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.12);
+        font-family:
+          system-ui,
+          -apple-system,
+          'Segoe UI',
+          Roboto,
+          Ubuntu,
+          sans-serif;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f4f6f8;
+          --fg: #1a2332;
+          --muted: #5c6b7a;
+          --card: #fff;
+          --border: rgba(0, 0, 0, 0.08);
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.5;
+      }
+      main {
+        max-width: 40rem;
+        margin: 0 auto;
+        padding: clamp(2rem, 5vw, 4rem) 1.25rem;
+      }
+      h1 {
+        font-size: clamp(1.75rem, 4vw, 2.25rem);
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin: 0 0 1.25rem;
+        color: var(--fg);
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      li article {
+        margin: 0;
+        padding: 1rem 1.15rem;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        transition: border-color 0.15s ease;
+      }
+      li article:hover {
+        border-color: var(--accent);
+      }
+      li a.main {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+      li a.main strong {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 0.35rem;
+        color: var(--accent);
+      }
+      li a.main:hover strong {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      li p.desc {
+        margin: 0;
+        font-size: 0.95rem;
+        color: var(--muted);
+      }
+      li p.route {
+        margin: 0.65rem 0 0;
+        font-size: 0.8rem;
+        color: var(--muted);
+        font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, monospace;
+      }
+      li p.route span {
+        color: var(--fg);
+        opacity: 0.85;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <main>
+      <h1>Websites</h1>
+      <ul>
+        <li>
+          <article>
+            <a class="main" href="disc-golf-bag/">
+              <strong>Disc Golf Bag</strong>
+              <p class="desc">Visualize a collection of disc flight paths.</p>
+            </a>
+            <p class="route" aria-label="URL path from site root">
+              <span>/disc-golf-bag/</span>
+            </p>
+          </article>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>

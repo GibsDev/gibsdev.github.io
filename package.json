@@ -1,13 +1,14 @@
 {
-  "name": "disc-golf-bag",
+  "name": "gibsdev.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:site": "npx --yes serve dist -p 4174",
+    "lint": "eslint ."
   },
   "dependencies": {
     "react": "^19.2.4",

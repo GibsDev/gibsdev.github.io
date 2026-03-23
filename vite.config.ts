@@ -1,7 +1,30 @@
+import { resolve } from 'node:path'
+import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
-export default defineConfig({
+const __dirname = fileURLToPath(new URL('.', import.meta.url))
+
+/**
+ * Multi-page app: `/` is the static home; `/disc-golf-bag/` is the React app.
+ * For GitHub project pages (`/repo/` base), set: BASE_PATH=/repo/ npm run build
+ */
+function basePath(): string {
+  const raw = process.env.BASE_PATH?.trim()
+  if (!raw || raw === '/') return '/'
+  const withSlash = raw.endsWith('/') ? raw : `${raw}/`
+  return withSlash.startsWith('/') ? withSlash : `/${withSlash}`
+}
+
+export default defineConfig(({ command }) => ({
   plugins: [react()],
-})
+  base: command === 'serve' ? '/' : basePath(),
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+        'disc-golf-bag': resolve(__dirname, 'disc-golf-bag/index.html'),
+      },
+    },
+  },
+}))
