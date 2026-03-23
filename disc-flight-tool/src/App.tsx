@@ -157,7 +157,7 @@ function App() {
     setDiscs((prev) => prev.filter((d) => d.id !== id))
   }
 
-  const shareBag = useCallback(async () => {
+  const shareFlights = useCallback(async () => {
     const url = buildShareUrl(discs)
     window.history.replaceState(null, '', url)
     try {
@@ -193,8 +193,8 @@ function App() {
             className="bag-menu-toggle"
             onClick={() => setSidebarOpen(true)}
             aria-expanded={mobileSidebarOpen}
-            aria-controls="disc-bag-sidebar"
-            id="disc-bag-menu-button"
+            aria-controls="disc-flight-sidebar"
+            id="disc-flight-menu-button"
           >
             Discs
           </button>
@@ -208,7 +208,7 @@ function App() {
         />
       </main>
       <aside
-        id="disc-bag-sidebar"
+        id="disc-flight-sidebar"
         className={
           'bag-sidebar' +
           (mobileSidebarOpen ? ' bag-sidebar--open' : '')
@@ -238,7 +238,7 @@ function App() {
               <button
                 type="button"
                 className="bag-btn-neutral"
-                onClick={() => void shareBag()}
+                onClick={() => void shareFlights()}
               >
                 Share
               </button>

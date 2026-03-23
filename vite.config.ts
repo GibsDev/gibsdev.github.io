@@ -6,7 +6,7 @@ import react from '@vitejs/plugin-react'
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 /**
- * Multi-page app: `/` is the static home; `/disc-golf-bag/` is the React app.
+ * Multi-page app: `/` is the static home; `/disc-flight-tool/` is the React app.
  * For GitHub project pages (`/repo/` base), set: BASE_PATH=/repo/ npm run build
  */
 function basePath(): string {
@@ -24,7 +24,7 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        'disc-golf-bag': resolve(__dirname, 'disc-golf-bag/index.html'),
+        'disc-flight-tool': resolve(__dirname, 'disc-flight-tool/index.html'),
       },
     },
   },

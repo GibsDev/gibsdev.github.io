@@ -24,5 +24,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["disc-golf-bag/src"]
+  "include": ["disc-flight-tool/src"]
 }
