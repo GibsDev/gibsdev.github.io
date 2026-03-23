@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "preview": "vite preview",
-    "preview:site": "npx --yes serve dist -p 4174",
+    "preview:site": "npx --yes serve docs -p 4174",
     "lint": "eslint ."
   },
   "dependencies": {

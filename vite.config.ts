@@ -20,6 +20,7 @@ export default defineConfig(({ command }) => ({
   plugins: [react()],
   base: command === 'serve' ? '/' : basePath(),
   build: {
+    outDir: 'docs',
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
