@@ -25,6 +25,7 @@ export default defineConfig(({ command }) => ({
       input: {
         main: resolve(__dirname, 'index.html'),
         'disc-flight-tool': resolve(__dirname, 'disc-flight-tool/index.html'),
+        'text-as-image': resolve(__dirname, 'text-as-image/index.html'),
       },
     },
   },
